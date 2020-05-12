@@ -10,4 +10,4 @@ colour
 pyparsing
 gitpython
 appdirs
-git+https://github.com/MCU-Innovations/eculib.git#egg=eculib>=1.0.27
+git+https://github.com/rsperry79/eculib.git#egg=eculib>=1.0.27

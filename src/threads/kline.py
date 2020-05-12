@@ -90,7 +90,7 @@ class KlineWorker(Thread):
 				self.__cleanup()
 		elif action == "activate":
 			self.__clear_data()
-			self.ecu = HondaECU(KlineAdapter(config), retries=int(self.parent.config["DEFAULT"]["retries"]), timeout=float(self.parent.config["DEFAULT"]["timeout"]))
+			self.ecu = HondaECU(KlineAdapter(config))
 			self.ready = True
 
 	def read_flash(self):
@@ -431,7 +431,7 @@ class KlineWorker(Thread):
 							self.do_on_power()
 						else:
 							self.ecu.init()
-							self.ecu.ping()
+
 					else:
 						if self.ecu.diag():
 							if self.do_connected() > 0:
